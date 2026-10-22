@@ -374,11 +374,22 @@ h1 {
       <img src="logo.png" alt="Garagebedrijf Oude Booyink" class="logo">
     </a>
 
-    <nav aria-label="Hoofdnavigatie">
-      <a href="#aanbod">Ons aanbod</a>
-      <a href="#over-ons">Over ons</a>
-      <a href="#contact">Contact</a>
-    </nav>
+   
+<button class="menu-toggle" id="menuToggle" type="button"
+        aria-label="Menu openen" aria-expanded="false"
+        aria-controls="site-menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="menu-panel" id="site-menu" aria-label="Hoofdnavigatie" hidden>
+  <a href="#home">Home</a>
+  <a href="#aanbod">Aanbod</a>
+  <a href="#over-ons">Over ons</a>
+  <a href="#contact">Contact</a>
+</nav>
+
   </div>
 </header>
 
