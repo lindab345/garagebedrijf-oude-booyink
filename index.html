@@ -1,64 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Garagebedrijf Oude Booyink in Saasveld.">
+  <meta name="theme-color" content="#101010">
+  <title>Garagebedrijf Oude Booyink | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
 
-/* Homepage: donkere vrachtwagenfoto en tekst in het midden */
-.home-hero {
-  position: relative;
-  min-height: calc(100vh - 86px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 0;
-  background-color: #101010;
-  background-image:
-    linear-gradient(90deg, rgba(0, 0, 0, .86), rgba(0, 0, 0, .28)),
-    url('vrachtwagentje.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Garagebedrijf Oude Booyink - Home">
+        <img src="logo.png" alt="Garagebedrijf Oude Booyink" class="logo">
+      </a>
 
-/* Voorkomt een dubbele donkere laag */
-.home-hero::after {
-  content: none !important;
-}
+      <div class="menu-wrap">
+        <button class="menu-toggle" id="menuToggle"
+                type="button" aria-label="Menu openen"
+                aria-expanded="false" aria-controls="site-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-.home-hero-content {
-  position: relative;
-  z-index: 1;
-  width: min(1160px, 92%);
-  margin: 0 auto;
-  padding: 40px 0;
-  text-align: center;
-}
+        <nav class="menu-panel" id="site-menu"
+             aria-label="Hoofdnavigatie" hidden>
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="aanbod.html">Aanbod</a>
+          <a href="over-ons.html">Over ons</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-.home-hero .eyebrow {
-  color: #0089E8;
-  font-size: .76rem;
-  font-weight: 700;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-}
+  <main>
+    <section class="home-hero"
+             aria-label="Vrachtwagen van Garagebedrijf Oude Booyink">
+    </section>
+  </main>
 
-.home-hero h1 {
-  color: #ffffff;
-  margin: 18px 0;
-  font-size: clamp(2.7rem, 6vw, 5.3rem);
-  line-height: 1.02;
-  letter-spacing: -.045em;
-  white-space: nowrap;
-}
-
-.home-hero .actions {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-@media (max-width: 700px) {
-  .home-hero h1 {
-    white-space: normal;
-  }
-}
-
+  <script src="script.js"></script>
+</body>
+</html>
 
