@@ -226,4 +226,9 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted)
   .home-hero h1 {
     white-space: normal;
   }
+  }
+.menu-toggle {
+  border: none !important;
+  background: transparent;
+  box-shadow: none;
 }
