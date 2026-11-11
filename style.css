@@ -541,19 +541,32 @@ p {
    KNOPPEN
 ===================================== */
 
+
+/* =====================================
+   KNOPPEN - LANGWERPIG EN AFGEROND
+===================================== */
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 13px 21px;
+
+  min-height: 50px;
+  padding: 0 26px;
+
   border: 1px solid var(--blue-light);
+  border-radius: 50px;
+
+  background: var(--accent);
   color: white;
-  font-weight: 700;
+
+  font-weight: 800;
   font-size: .9rem;
-  transition: .2s;
-  cursor: pointer;
   font-family: inherit;
-  background: transparent;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: background .25s ease, transform .25s ease;
 }
 
 .btn.primary {
@@ -562,15 +575,17 @@ p {
 }
 
 .btn:hover {
+  background: var(--blue-light);
+  color: white;
   transform: translateY(-2px);
-  opacity: .9;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
 }
 
 /* =====================================
