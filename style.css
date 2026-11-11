@@ -685,6 +685,7 @@ footer {
    TELEFOON
 ===================================== */
 
+
 @media (max-width: 700px) {
   .menu-panel {
     width: 92vw;
@@ -697,41 +698,24 @@ footer {
     font-size: clamp(30px, 8vw, 42px);
   }
 
+  .home-hero {
+    background-position: 60% center;
+  }
+
   .home-hero h1 {
     white-space: normal;
   }
-}
 
-@media (max-width: 560px) {
-  .nav {
-    min-height: 74px;
+  .home-hero .actions {
+    flex-wrap: nowrap;
+    gap: 8px;
   }
 
-  .logo {
-    height: 55px;
-  }
-
-  .cars {
-    grid-template-columns: 1fr;
-  }
-
-  .car img {
-    height: 235px;
-  }
-
-  main section.content-section {
-    padding: 48px 0 60px;
-  }
-
-  .features {
-    gap: 12px;
-  }
-
-  .contact-card {
-    padding: 20px;
-  }
-
-  .page-hero {
-    padding: 46px 0 36px;
+  .home-hero .actions .btn {
+    flex: 1;
+    min-width: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    white-space: nowrap;
   }
 }
