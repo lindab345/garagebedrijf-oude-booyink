@@ -684,8 +684,6 @@ footer {
 /* =====================================
    TELEFOON
 ===================================== */
-
-
 @media (max-width: 700px) {
   .menu-panel {
     width: 92vw;
@@ -717,5 +715,9 @@ footer {
     padding: 0 10px;
     font-size: 12px;
     white-space: nowrap;
+  }
+
+  .cars {
+    grid-template-columns: 1fr;
   }
 }
