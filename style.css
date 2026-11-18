@@ -81,7 +81,7 @@ button, input, textarea {
 }
 
 /* =====================================
-   MENUKNOP - HOUSE OF CARS STIJL
+   MENUKNOP
 ===================================== */
 
 .menu-wrap {
@@ -130,8 +130,6 @@ button, input, textarea {
   line-height: 1;
 }
 
-/* Drie horizontale streepjes */
-
 .menu-toggle .menu-lines {
   width: 25px;
   height: 22px;
@@ -154,8 +152,6 @@ button, input, textarea {
   width: 18px;
 }
 
-/* Streepjes veranderen in kruisje */
-
 .menu-toggle[aria-expanded="true"] .menu-lines span:first-child {
   transform: translateY(10px) rotate(45deg);
 }
@@ -169,7 +165,7 @@ button, input, textarea {
 }
 
 /* =====================================
-   GROOT SCHUIFMENU RECHTS
+   MENU
 ===================================== */
 
 .menu-panel {
@@ -248,9 +244,6 @@ body.menu-open {
   overflow: hidden;
 }
 
-
-}
-
 /* =====================================
    HOMEPAGE
 ===================================== */
@@ -262,7 +255,7 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0;
+  padding: 120px 0 60px;
 
   background-color: #101010;
   background-image:
@@ -278,10 +271,6 @@ body.menu-open {
   background-repeat: no-repeat;
 }
 
-.home-hero::after {
-  content: none !important;
-}
-
 .home-hero-content {
   position: relative;
   z-index: 1;
@@ -291,21 +280,18 @@ body.menu-open {
   text-align: center;
 }
 
-.home-hero .eyebrow {
-  color: var(--blue-light);
-  font-size: .76rem;
-  font-weight: 700;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-}
-
 .home-hero h1 {
   color: white;
   margin: 18px 0;
   font-size: clamp(2.7rem, 6vw, 5.3rem);
   line-height: 1.02;
   letter-spacing: -.045em;
-  white-space: nowrap;
+}
+
+.home-hero-content > p {
+  color: white;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  margin: 18px 0 0;
 }
 
 .home-hero .actions {
@@ -313,7 +299,7 @@ body.menu-open {
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 18px;
 }
 
 /* =====================================
@@ -504,11 +490,6 @@ p {
    KNOPPEN
 ===================================== */
 
-
-/* =====================================
-   KNOPPEN - LANGWERPIG EN AFGEROND
-===================================== */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -647,6 +628,7 @@ footer {
 /* =====================================
    TELEFOON
 ===================================== */
+
 @media (max-width: 700px) {
   .menu-panel {
     width: 92vw;
@@ -675,9 +657,14 @@ footer {
   .home-hero .actions .btn {
     flex: 1;
     min-width: 0;
-    padding: 0 10px;
+    padding: 0 8px;
     font-size: 12px;
     white-space: nowrap;
+  }
+
+  .home-hero .actions:last-child .btn {
+    flex: 0 1 auto;
+    min-width: 180px;
   }
 
   .cars {
