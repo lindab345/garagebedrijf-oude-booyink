@@ -848,7 +848,10 @@ footer {
     gap: 12px;
 
     width: min(44vw, 540px);
-    overflow: hidden;
+    overflow-x: auto;
+overflow-y: hidden;
+scroll-behavior: smooth;
+scrollbar-width: none;
 
     -webkit-mask-image: linear-gradient(
       to right,
