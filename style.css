@@ -878,3 +878,36 @@ footer {
     min-width: 110px;
   }
 }
+
+/* Vloeiende fotocarrousel */
+.hero-gallery {
+  overflow: hidden !important;
+  flex-wrap: nowrap !important;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 65%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 65%,
+    transparent 100%
+  );
+}
+
+.hero-gallery-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 12px;
+  flex-shrink: 0;
+  transform: translateX(0);
+  will-change: transform;
+}
+
+.hero-gallery-track .hero-thumb {
+  flex: 0 0 110px;
+  min-width: 110px;
+}
