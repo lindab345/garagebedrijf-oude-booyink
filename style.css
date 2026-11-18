@@ -841,22 +841,20 @@ footer {
 
 /* Fotogalerij: foto's lopen rechts uit beeld */
 @media (min-width: 769px) {
-  .hero-gallery {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 12px;
 
-    width: min(44vw, 540px);
-    overflow-x: auto;
-overflow-y: hidden;
-scroll-behavior: smooth;
-scrollbar-width: none;
-    .hero-gallery::-webkit-scrollbar {
+  .hero-gallery {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.hero-gallery::-webkit-scrollbar {
   display: none;
 }
 
 .hero-gallery .hero-thumb {
+  flex: 0 0 110px;
   scroll-snap-align: start;
 }
 
