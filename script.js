@@ -56,18 +56,20 @@
     });
   }
 
- 
+
   // FOTO'S OP DE HOMEPAGE - VLOEIENDE CARROUSEL
   const hero = document.querySelector('.home-hero');
   const gallery = document.querySelector('.hero-gallery');
 
   if (hero && gallery) {
 
-    // Maak een bewegende fotoreeks
+    // Maak de bewegende fotoreeks
     const track = document.createElement('div');
     track.className = 'hero-gallery-track';
 
-    const photos = Array.from(gallery.querySelectorAll('.hero-thumb'));
+    const photos = Array.from(
+      gallery.querySelectorAll('.hero-thumb')
+    );
 
     photos.forEach(function (photo) {
       track.appendChild(photo);
@@ -83,6 +85,7 @@
       if (!thumbnail || isAnimating) return;
 
       const image = thumbnail.getAttribute('data-image');
+
       if (!image) return;
 
       // Achtergrondfoto veranderen
@@ -115,32 +118,38 @@
       thumbnail.classList.add('active');
       thumbnail.setAttribute('aria-pressed', 'true');
 
-      // Bepaal hoeveel de fotoreeks moet schuiven
+      // Bereken de afstand naar de aangeklikte foto
       const firstPhoto = track.firstElementChild;
 
       const distance =
-        thumbnail.getBoundingClientRect().left -
-        firstPhoto.getBoundingClientRect().left;
+        thumbnail.offsetLeft - firstPhoto.offsetLeft;
 
-      if (distance <= 0) return;
+      // Staat de foto al vooraan? Dan hoeft niets te schuiven
+      if (distance <= 1) return;
 
-      // Schuif de foto's vloeiend naar links
       isAnimating = true;
 
+      // Schuif de fotoreeks zichtbaar naar links
       track.style.transition = 'transform 700ms ease';
       track.style.transform = 'translateX(-' + distance + 'px)';
 
-      track.addEventListener('transitionend', function finish(event) {
-        if (event.propertyName !== 'transform') return;
+      // Na de beweging de volgorde aanpassen
+      function finish(event) {
+        if (
+          event.target !== track ||
+          event.propertyName !== 'transform'
+        ) {
+          return;
+        }
 
         track.removeEventListener('transitionend', finish);
 
-        // Zet de aangeklikte foto vooraan
+        // Verplaats de foto's vóór de gekozen foto naar achteren
         while (track.firstElementChild !== thumbnail) {
           track.appendChild(track.firstElementChild);
         }
 
-        // Zet de reeks terug zonder zichtbare sprong
+        // Zet de fotoreeks terug zonder zichtbare sprong
         track.style.transition = 'none';
         track.style.transform = 'translateX(0)';
 
@@ -149,15 +158,20 @@
         track.style.transition = 'transform 700ms ease';
 
         isAnimating = false;
-      });
+      }
+
+      track.addEventListener('transitionend', finish);
     });
   }
 
+
+  // AUTOMATISCH JAARTAL
   const year = document.getElementById('year');
 
   if (year) {
     year.textContent = new Date().getFullYear();
   }
+
 
   // CONTACTFORMULIER
   const contactForm = document.getElementById('contactForm');
