@@ -671,7 +671,14 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-
+@media (max-width: 768px) {
+  .hero-background {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-color: #101010;
+  }
+}
 /* =====================================
    SERVICES PAGINA
 ===================================== */
