@@ -189,7 +189,7 @@ button, input, textarea {
 
   background: #101820;
   border: none;
-  box-shadow: -20px 0 60px rgba(0,0,0,.4);
+  box-shadow: none;
 
   display: flex;
   flex-direction: column;
@@ -208,23 +208,12 @@ button, input, textarea {
   display: none !important;
 }
 
-/* Menutitel */
-
 .menu-panel .menu-heading {
-  color: var(--blue-light);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin-bottom: 28px;
+  display: none;
 }
 
-/* Grote menuteksten */
-
 .menu-panel a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+  display: block;
   padding: 17px 0;
 
   color: white;
@@ -236,56 +225,30 @@ button, input, textarea {
   font-weight: 700;
   letter-spacing: .5px;
   text-transform: uppercase;
+  text-decoration: none;
 
-  transition: color .25s ease, padding .25s ease;
+  transition: color .25s ease;
 }
 
 .menu-panel a span {
-  color: var(--blue-light);
-  font-size: 25px;
+  display: none;
 }
 
 .menu-panel a:hover,
 .menu-panel a:focus-visible {
   color: var(--blue-light);
-  padding-left: 10px;
   outline: none;
 }
 
-/* Onderkant menu */
-
-.menu-footer {
-  margin-top: auto;
-  padding-top: 40px;
-  color: #aebdca;
-  font-size: 12px;
-  line-height: 2;
-  letter-spacing: 1.5px;
-}
-
-/* Donkere laag achter menu */
-
 .menu-overlay {
-  position: fixed;
-  z-index: 1004;
-  inset: 0;
-  background: rgba(0,0,0,.72);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .45s ease, visibility .45s ease;
-}
-
-.menu-overlay.is-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.menu-overlay[hidden] {
   display: none !important;
 }
 
 body.menu-open {
   overflow: hidden;
+}
+
+
 }
 
 /* =====================================
