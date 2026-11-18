@@ -56,8 +56,9 @@
     });
   }
 
-  // FOTO'S OP DE HOMEPAGE WISSELEN
+  // FOTO'S OP DE HOMEPAGE WISSELEN EN DOORSCHUIVEN
   const hero = document.querySelector('.home-hero');
+  const gallery = document.querySelector('.hero-gallery');
   const thumbnails = document.querySelectorAll('.hero-thumb');
 
   if (hero && thumbnails.length) {
@@ -67,17 +68,28 @@
 
         if (!image) return;
 
-        // Start de overgang
+        // Achtergrondfoto veranderen
         hero.classList.add('photo-changing');
 
-        setTimeout(function () {
-          hero.style.setProperty(
-            '--hero-image',
-            'url("' + image + '")'
-          );
+        const newImage = new Image();
 
+        newImage.onload = function () {
+          setTimeout(function () {
+            hero.style.setProperty(
+              '--hero-image',
+              'url("' + image + '")'
+            );
+
+            hero.classList.remove('photo-changing');
+          }, 250);
+        };
+
+        newImage.onerror = function () {
           hero.classList.remove('photo-changing');
-        }, 250);
+          console.warn('Foto niet gevonden:', image);
+        };
+
+        newImage.src = image;
 
         // Blauwe rand bij de geselecteerde foto
         thumbnails.forEach(function (item) {
@@ -87,6 +99,14 @@
 
         thumbnail.classList.add('active');
         thumbnail.setAttribute('aria-pressed', 'true');
+
+        // Geselecteerde foto naar links doorschuiven
+        if (gallery) {
+          gallery.scrollTo({
+            left: thumbnail.offsetLeft - gallery.offsetLeft,
+            behavior: 'smooth'
+          });
+        }
       });
     });
   }
@@ -137,5 +157,4 @@
   }
 
 })();
-
 
