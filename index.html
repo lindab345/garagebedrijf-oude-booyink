@@ -1,4 +1,6 @@
-cf<!DOCTYPE html>
+
+
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
@@ -18,20 +20,18 @@ cf<!DOCTYPE html>
 
       <div class="menu-wrap">
         <button class="menu-toggle" id="menuToggle"
-        type="button"
-        aria-label="Menu openen"
-        aria-expanded="false"
-        aria-controls="site-menu">
+                type="button"
+                aria-label="Menu openen"
+                aria-expanded="false"
+                aria-controls="site-menu">
+          <span class="menu-label">MENU</span>
+          <span class="menu-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
 
-  <span class="menu-label">MENU</span>
-
-  <span class="menu-lines">
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-
-</button>
         <nav class="menu-panel" id="site-menu"
              aria-label="Hoofdnavigatie" hidden>
           <a href="index.html" aria-current="page">Home</a>
@@ -45,28 +45,26 @@ cf<!DOCTYPE html>
   </header>
 
   <main>
-    
-<section class="home-hero"
-         aria-label="Garagebedrijf Oude Booyink">
+    <section class="home-hero" aria-label="Garagebedrijf Oude Booyink">
+      <div class="home-hero-content">
 
-  <div class="home-hero-content">
+        <h1>Karakter. Kwaliteit. Rijplezier.</h1>
 
-    <div class="eyebrow">Karakter. Kwaliteit. Rijplezier.</div>
+        <p>Vind de auto die bij je past.</p>
 
-    <h1>Vind de auto die bij je past.</h1>
+        <div class="actions">
+          <a class="btn primary" href="aanbod.html">Bekijk ons aanbod</a>
+          <a class="btn" href="services.html">Services</a>
+        </div>
 
-    <div class="actions">
-      <a class="btn primary" href="aanbod.html">Bekijk het aanbod</a>
-      <a class="btn" href="contact.html">Neem contact op</a>
-    </div>
+        <div class="actions">
+          <a class="btn" href="contact.html">Neem contact op</a>
+        </div>
 
-  </div>
-
-</section>
-
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
