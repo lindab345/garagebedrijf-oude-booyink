@@ -838,3 +838,35 @@ footer {
     padding-bottom: 125px;
   }
 }
+
+/* Fotogalerij: foto's lopen rechts uit beeld */
+@media (min-width: 769px) {
+  .hero-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 12px;
+
+    width: min(44vw, 540px);
+    overflow: hidden;
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 0%,
+      black 65%,
+      transparent 100%
+    );
+
+    mask-image: linear-gradient(
+      to right,
+      black 0%,
+      black 65%,
+      transparent 100%
+    );
+  }
+
+  .hero-gallery .hero-thumb {
+    flex: 0 0 110px;
+    min-width: 110px;
+  }
+}
