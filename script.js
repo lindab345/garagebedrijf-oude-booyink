@@ -57,59 +57,58 @@
   }
 
   // FOTO'S OP DE HOMEPAGE WISSELEN EN DOORSCHUIVEN
+  
+  // FOTO'S OP DE HOMEPAGE WISSELEN EN VAN VOLGORDE VERANDEREN
   const hero = document.querySelector('.home-hero');
   const gallery = document.querySelector('.hero-gallery');
-  const thumbnails = document.querySelectorAll('.hero-thumb');
 
-  if (hero && thumbnails.length) {
-    thumbnails.forEach(function (thumbnail) {
-      thumbnail.addEventListener('click', function () {
-        const image = thumbnail.getAttribute('data-image');
+  if (hero && gallery) {
 
-        if (!image) return;
+    gallery.addEventListener('click', function (event) {
+      const thumbnail = event.target.closest('.hero-thumb');
 
-        // Achtergrondfoto veranderen
-        hero.classList.add('photo-changing');
+      if (!thumbnail) return;
 
-        const newImage = new Image();
+      const image = thumbnail.getAttribute('data-image');
+      if (!image) return;
 
-        newImage.onload = function () {
-          setTimeout(function () {
-            hero.style.setProperty(
-              '--hero-image',
-              'url("' + image + '")'
-            );
+      // Achtergrondfoto veranderen
+      hero.classList.add('photo-changing');
 
-            hero.classList.remove('photo-changing');
-          }, 250);
-        };
+      const newImage = new Image();
 
-        newImage.onerror = function () {
+      newImage.onload = function () {
+        setTimeout(function () {
+          hero.style.setProperty(
+            '--hero-image',
+            'url("' + image + '")'
+          );
+
           hero.classList.remove('photo-changing');
-          console.warn('Foto niet gevonden:', image);
-        };
+        }, 250);
+      };
 
-        newImage.src = image;
+      newImage.onerror = function () {
+        hero.classList.remove('photo-changing');
+        console.warn('Foto niet gevonden:', image);
+      };
 
-        // Blauwe rand bij de geselecteerde foto
-        thumbnails.forEach(function (item) {
-          item.classList.remove('active');
-          item.setAttribute('aria-pressed', 'false');
-        });
+      newImage.src = image;
 
-        thumbnail.classList.add('active');
-        thumbnail.setAttribute('aria-pressed', 'true');
-
-        // Geselecteerde foto naar links doorschuiven
-        if (gallery) {
-          gallery.scrollTo({
-            left: thumbnail.offsetLeft - gallery.offsetLeft,
-            behavior: 'smooth'
-          });
-        }
+      // Blauwe rand aanpassen
+      gallery.querySelectorAll('.hero-thumb').forEach(function (item) {
+        item.classList.remove('active');
+        item.setAttribute('aria-pressed', 'false');
       });
+
+      thumbnail.classList.add('active');
+      thumbnail.setAttribute('aria-pressed', 'true');
+
+      // Geselecteerde foto naar de eerste positie verplaatsen
+      gallery.insertBefore(thumbnail, gallery.firstElementChild);
     });
   }
+
 
   // AUTOMATISCH JAARTAL
   const year = document.getElementById('year');
