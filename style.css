@@ -41,9 +41,7 @@ button, input, textarea {
   margin: 0 auto;
 }
 
-/* =====================================
-   HEADER EN LOGO
-===================================== */
+/* HEADER EN LOGO */
 
 .site-header {
   position: relative;
@@ -80,9 +78,7 @@ button, input, textarea {
   object-fit: contain;
 }
 
-/* =====================================
-   MENUKNOP
-===================================== */
+/* MENUKNOP */
 
 .menu-wrap {
   position: relative;
@@ -101,13 +97,11 @@ button, input, textarea {
   background: var(--accent);
   color: white;
   box-shadow: none;
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-
   cursor: pointer;
   transition: background .25s ease;
 }
@@ -164,33 +158,25 @@ button, input, textarea {
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* =====================================
-   MENU
-===================================== */
+/* MENU */
 
 .menu-panel {
   position: fixed;
   z-index: 1006;
   top: 0;
   right: 0;
-
   width: 40vw;
   min-width: 360px;
   max-width: 620px;
-
   height: 100vh;
   height: 100dvh;
-
   padding: 145px 55px 45px;
-
   background: #101820;
   border: none;
   box-shadow: none;
-
   display: flex;
   flex-direction: column;
   gap: 0;
-
   transform: translateX(100%);
   transition: transform .45s cubic-bezier(.77,0,.18,1);
   overflow-y: auto;
@@ -211,18 +197,15 @@ button, input, textarea {
 .menu-panel a {
   display: block;
   padding: 17px 0;
-
   color: white;
   background: transparent;
   border-bottom: 1px solid rgba(255,255,255,.15);
-
   font-family: Impact, "Arial Narrow", sans-serif;
   font-size: clamp(30px, 3.2vw, 46px);
   font-weight: 700;
   letter-spacing: .5px;
   text-transform: uppercase;
   text-decoration: none;
-
   transition: color .25s ease;
 }
 
@@ -244,9 +227,7 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* =====================================
-   HOMEPAGE
-===================================== */
+/* HOMEPAGE */
 
 .home-hero {
   position: relative;
@@ -256,7 +237,6 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   padding: 120px 0 60px;
-
   background-color: #101010;
   background-image:
     linear-gradient(
@@ -265,7 +245,6 @@ body.menu-open {
       rgba(0,0,0,.28)
     ),
     url('vrachtwagentje.jpg');
-
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -289,7 +268,7 @@ body.menu-open {
 }
 
 .home-hero-content > p {
-  color: white;
+  color: #0089E8 !important;
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   margin: 18px 0 0;
 }
@@ -302,9 +281,7 @@ body.menu-open {
   margin-top: 18px;
 }
 
-/* =====================================
-   PAGINAKOPPEN
-===================================== */
+/* PAGINAKOPPEN */
 
 .page-hero {
   padding: 76px 0 58px;
@@ -333,9 +310,7 @@ body.menu-open {
   color: var(--muted);
 }
 
-/* =====================================
-   ALGEMENE TEKST EN SECTIES
-===================================== */
+/* ALGEMENE TEKST EN SECTIES */
 
 main section.content-section {
   padding: 64px 0 82px;
@@ -361,9 +336,7 @@ p {
   color: var(--muted);
 }
 
-/* =====================================
-   AUTO-AANBOD
-===================================== */
+/* AUTO-AANBOD */
 
 .cars {
   display: grid;
@@ -449,9 +422,7 @@ p {
   margin-top: 18px;
 }
 
-/* =====================================
-   OVER ONS
-===================================== */
+/* OVER ONS */
 
 .about-panel {
   background: var(--about-bg);
@@ -486,29 +457,22 @@ p {
   font-weight: 700;
 }
 
-/* =====================================
-   KNOPPEN
-===================================== */
+/* KNOPPEN */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   min-height: 50px;
   padding: 0 26px;
-
   border: 1px solid var(--blue-light);
   border-radius: 50px;
-
   background: var(--accent);
   color: white;
-
   font-weight: 800;
   font-size: .9rem;
   font-family: inherit;
   text-decoration: none;
-
   cursor: pointer;
   transition: background .25s ease, transform .25s ease;
 }
@@ -532,9 +496,7 @@ p {
   margin-top: 28px;
 }
 
-/* =====================================
-   CONTACT
-===================================== */
+/* CONTACT */
 
 .contact-grid {
   display: grid;
@@ -587,9 +549,7 @@ textarea {
   resize: vertical;
 }
 
-/* =====================================
-   FOOTER
-===================================== */
+/* FOOTER */
 
 footer {
   border-top: 1px solid var(--line);
@@ -605,9 +565,7 @@ footer {
   flex-wrap: wrap;
 }
 
-/* =====================================
-   TABLET
-===================================== */
+/* TABLET */
 
 @media (max-width: 800px) {
   .cars {
@@ -625,9 +583,7 @@ footer {
   }
 }
 
-/* =====================================
-   TELEFOON
-===================================== */
+/* TELEFOON */
 
 @media (max-width: 700px) {
   .menu-panel {
@@ -671,17 +627,8 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 768px) {
-  .hero-background {
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    background-color: #101010;
-  }
-}
-/* =====================================
-   SERVICES PAGINA
-===================================== */
+
+/* SERVICES PAGINA */
 
 .services-grid {
   display: grid;
@@ -696,6 +643,8 @@ footer {
   border-top: 3px solid var(--blue-light);
   padding: 28px;
   min-width: 0;
+  border-radius: 20px !important;
+  overflow: hidden;
 }
 
 .service-number {
@@ -724,18 +673,8 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* Afgeronde hoeken van de servicevakken */
-.services-grid .service-card {
-    border-radius: 20px !important;
-    overflow: hidden;
-}
-.home-hero-content > p {
-    color: #0089E8 !important;
-} 
 
-/* =====================================
-   HOMEPAGE FOTO-GALERIJ
-===================================== */
+/* HOMEPAGE FOTO-ACHTERGROND */
 
 .home-hero {
   isolation: isolate;
@@ -747,7 +686,6 @@ footer {
   position: absolute;
   inset: 0;
   z-index: 0;
-
   background-image:
     linear-gradient(
       90deg,
@@ -755,11 +693,9 @@ footer {
       rgba(0,0,0,.28)
     ),
     var(--hero-image, url('vrachtwagentje.jpg'));
-
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
   opacity: 1;
   transition: opacity .25s ease;
 }
@@ -768,30 +704,46 @@ footer {
   opacity: .25;
 }
 
-/* Kleine foto's rechtsonder */
+/* HOMEPAGE - SCHUIVENDE FOTOGALERIJ */
+
 .hero-gallery {
   position: absolute;
   right: 35px;
   bottom: 30px;
   z-index: 3;
+  width: 168px;
+  height: 78px;
+  overflow: hidden;
+  display: block;
+}
 
+.hero-gallery-track {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 12px;
+  width: max-content;
+  height: 100%;
+  flex-shrink: 0;
+  transform: translateX(0);
+  will-change: transform;
+}
+
+.hero-gallery-track .hero-thumb {
+  display: block;
+  flex: 0 0 110px;
+  width: 110px;
+  min-width: 110px;
+  height: 78px;
 }
 
 .hero-thumb {
-  width: 112px;
-  height: 78px;
   padding: 0;
-
   border: 2px solid rgba(255,255,255,.65);
   border-radius: 10px;
   overflow: hidden;
-
   background: #101010;
   cursor: pointer;
-
   transition: border-color .25s ease,
               transform .25s ease,
               box-shadow .25s ease;
@@ -819,18 +771,25 @@ footer {
   outline-offset: 4px;
 }
 
-/* Mobiele weergave */
+/* MOBIELE FOTOGALERIJ */
+
 @media (max-width: 700px) {
   .hero-gallery {
-    right: 0;
-    left: 0;
+    right: 12px;
+    left: auto;
     bottom: 18px;
-    justify-content: center;
+    width: 132px;
+    height: 62px;
+  }
+
+  .hero-gallery-track {
     gap: 8px;
   }
 
-  .hero-thumb {
+  .hero-gallery-track .hero-thumb {
+    flex: 0 0 88px;
     width: 88px;
+    min-width: 88px;
     height: 62px;
   }
 
@@ -839,75 +798,3 @@ footer {
   }
 }
 
-/* Fotogalerij: foto's lopen rechts uit beeld */
-@media (min-width: 769px) {
-
-  .hero-gallery {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-.hero-gallery::-webkit-scrollbar {
-  display: none;
-}
-
-.hero-gallery .hero-thumb {
-  flex: 0 0 110px;
-  scroll-snap-align: start;
-}
-
-    -webkit-mask-image: linear-gradient(
-      to right,
-      black 0%,
-      black 65%,
-      transparent 100%
-    );
-
-    mask-image: linear-gradient(
-      to right,
-      black 0%,
-      black 65%,
-      transparent 100%
-    );
-  }
-
-  .hero-gallery .hero-thumb {
-    flex: 0 0 110px;
-    min-width: 110px;
-  }
-}
-
-/* Vloeiende fotocarrousel */
-.hero-gallery {
-  overflow: hidden !important;
-  flex-wrap: nowrap !important;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    black 0%,
-    black 65%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    black 0%,
-    black 65%,
-    transparent 100%
-  );
-}
-
-.hero-gallery-track {
-  display: flex;
-  flex-wrap: nowrap;
-  width: max-content;
-  gap: 12px;
-  flex-shrink: 0;
-  transform: translateX(0);
-  will-change: transform;
-}
-
-.hero-gallery-track .hero-thumb {
-  flex: 0 0 110px;
-  min-width: 110px;
-}
