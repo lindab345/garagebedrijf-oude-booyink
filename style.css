@@ -717,8 +717,8 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* Ronde hoeken bij de servicevakken */
-.service-card {
-    border-radius: 16px;
+/* Afgeronde hoeken van de servicevakken */
+.services-grid .service-card {
+    border-radius: 20px !important;
     overflow: hidden;
 }
