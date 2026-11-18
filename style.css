@@ -722,3 +722,6 @@ footer {
     border-radius: 20px !important;
     overflow: hidden;
 }
+.home-hero-content > p {
+    color: #0089E8 !important;
+} 
