@@ -56,6 +56,41 @@
     });
   }
 
+  // FOTO'S OP DE HOMEPAGE WISSELEN
+  const hero = document.querySelector('.home-hero');
+  const thumbnails = document.querySelectorAll('.hero-thumb');
+
+  if (hero && thumbnails.length) {
+    thumbnails.forEach(function (thumbnail) {
+      thumbnail.addEventListener('click', function () {
+        const image = thumbnail.getAttribute('data-image');
+
+        if (!image) return;
+
+        // Start de overgang
+        hero.classList.add('photo-changing');
+
+        setTimeout(function () {
+          hero.style.setProperty(
+            '--hero-image',
+            'url("' + image + '")'
+          );
+
+          hero.classList.remove('photo-changing');
+        }, 250);
+
+        // Blauwe rand bij de geselecteerde foto
+        thumbnails.forEach(function (item) {
+          item.classList.remove('active');
+          item.setAttribute('aria-pressed', 'false');
+        });
+
+        thumbnail.classList.add('active');
+        thumbnail.setAttribute('aria-pressed', 'true');
+      });
+    });
+  }
+
   // AUTOMATISCH JAARTAL
   const year = document.getElementById('year');
 
