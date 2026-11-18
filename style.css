@@ -852,6 +852,13 @@ footer {
 overflow-y: hidden;
 scroll-behavior: smooth;
 scrollbar-width: none;
+    .hero-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-gallery .hero-thumb {
+  scroll-snap-align: start;
+}
 
     -webkit-mask-image: linear-gradient(
       to right,
