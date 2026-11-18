@@ -56,36 +56,47 @@
     });
   }
 
-  // FOTO'S OP DE HOMEPAGE WISSELEN EN DOORSCHUIVEN
-  
-  // FOTO'S OP DE HOMEPAGE WISSELEN EN VAN VOLGORDE VERANDEREN
+ 
+  // FOTO'S OP DE HOMEPAGE - VLOEIENDE CARROUSEL
   const hero = document.querySelector('.home-hero');
   const gallery = document.querySelector('.hero-gallery');
 
   if (hero && gallery) {
 
-    gallery.addEventListener('click', function (event) {
+    // Maak een bewegende fotoreeks
+    const track = document.createElement('div');
+    track.className = 'hero-gallery-track';
+
+    const photos = Array.from(gallery.querySelectorAll('.hero-thumb'));
+
+    photos.forEach(function (photo) {
+      track.appendChild(photo);
+    });
+
+    gallery.appendChild(track);
+
+    let isAnimating = false;
+
+    track.addEventListener('click', function (event) {
       const thumbnail = event.target.closest('.hero-thumb');
 
-      if (!thumbnail) return;
+      if (!thumbnail || isAnimating) return;
 
       const image = thumbnail.getAttribute('data-image');
       if (!image) return;
 
       // Achtergrondfoto veranderen
-      hero.classList.add('photo-changing');
-
       const newImage = new Image();
 
-      newImage.onload = function () {
-        setTimeout(function () {
-          hero.style.setProperty(
-            '--hero-image',
-            'url("' + image + '")'
-          );
+      hero.classList.add('photo-changing');
 
-          hero.classList.remove('photo-changing');
-        }, 250);
+      newImage.onload = function () {
+        hero.style.setProperty(
+          '--hero-image',
+          'url("' + image + '")'
+        );
+
+        hero.classList.remove('photo-changing');
       };
 
       newImage.onerror = function () {
@@ -96,7 +107,7 @@
       newImage.src = image;
 
       // Blauwe rand aanpassen
-      gallery.querySelectorAll('.hero-thumb').forEach(function (item) {
+      track.querySelectorAll('.hero-thumb').forEach(function (item) {
         item.classList.remove('active');
         item.setAttribute('aria-pressed', 'false');
       });
@@ -104,13 +115,44 @@
       thumbnail.classList.add('active');
       thumbnail.setAttribute('aria-pressed', 'true');
 
-      // Geselecteerde foto naar de eerste positie verplaatsen
-      gallery.insertBefore(thumbnail, gallery.firstElementChild);
+      // Bepaal hoeveel de fotoreeks moet schuiven
+      const firstPhoto = track.firstElementChild;
+
+      const distance =
+        thumbnail.getBoundingClientRect().left -
+        firstPhoto.getBoundingClientRect().left;
+
+      if (distance <= 0) return;
+
+      // Schuif de foto's vloeiend naar links
+      isAnimating = true;
+
+      track.style.transition = 'transform 700ms ease';
+      track.style.transform = 'translateX(-' + distance + 'px)';
+
+      track.addEventListener('transitionend', function finish(event) {
+        if (event.propertyName !== 'transform') return;
+
+        track.removeEventListener('transitionend', finish);
+
+        // Zet de aangeklikte foto vooraan
+        while (track.firstElementChild !== thumbnail) {
+          track.appendChild(track.firstElementChild);
+        }
+
+        // Zet de reeks terug zonder zichtbare sprong
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+
+        track.offsetHeight;
+
+        track.style.transition = 'transform 700ms ease';
+
+        isAnimating = false;
+      });
     });
   }
 
-
-  // AUTOMATISCH JAARTAL
   const year = document.getElementById('year');
 
   if (year) {
