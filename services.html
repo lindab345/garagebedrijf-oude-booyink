@@ -4,42 +4,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Services | Garagebedrijf Oude Booyink</title>
+
   <meta name="description" content="Bij Garagebedrijf Oude Booyink kunt u terecht voor APK, onderhoud en reparaties.">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="site-header">
-  <div class="container nav">
-    <a href="index.html" class="logo-link">
+  <div class="wrap nav">
+
+    <a href="index.html" class="brand">
       <img src="logo.png" alt="Garagebedrijf Oude Booyink" class="logo">
     </a>
 
     <div class="menu-wrap">
+
       <button class="menu-toggle" id="menuToggle"
               type="button"
               aria-label="Menu openen"
               aria-expanded="false"
               aria-controls="site-menu">
+
         <span class="menu-label">MENU</span>
+
         <span class="menu-lines">
           <span></span>
           <span></span>
           <span></span>
         </span>
+
       </button>
 
       <nav class="menu-panel" id="site-menu"
            aria-label="Hoofdnavigatie" hidden>
+
         <div class="menu-heading">NAVIGATIE</div>
+
         <a href="index.html">Home <span>↗</span></a>
         <a href="aanbod.html">Aanbod <span>↗</span></a>
         <a href="services.html" aria-current="page">Services <span>↗</span></a>
         <a href="over-ons.html">Over ons <span>↗</span></a>
         <a href="contact.html">Contact <span>↗</span></a>
+
       </nav>
+
     </div>
   </div>
 </header>
@@ -48,29 +60,45 @@
 
 <main>
 
+  <!-- PAGINAKOP -->
+
   <section class="page-hero">
-    <div class="container">
+    <div class="wrap">
+
       <p class="eyebrow">GARAGEBEDRIJF OUDE BOOYINK</p>
+
       <h1>Onze services</h1>
+
       <p>
         Voor APK, onderhoud en reparaties kunt u bij ons terecht.
         Wij staan klaar om u weer veilig op weg te helpen.
       </p>
+
     </div>
   </section>
 
+
+  <!-- ONZE DIENSTEN -->
+
   <section class="content-section">
-    <div class="container">
+    <div class="wrap">
 
-      <div class="section-heading">
-        <p class="eyebrow">WAT WIJ DOEN</p>
-        <h2>Waarmee kunnen wij u helpen?</h2>
-      </div>
+      <p class="eyebrow">WAT WIJ DOEN</p>
 
-      <div class="features">
+      <h2>Waarmee kunnen wij u helpen?</h2>
 
-        <article class="feature">
+      <p class="section-intro">
+        Bij Garagebedrijf Oude Booyink kunt u terecht voor
+        verschillende werkzaamheden aan uw auto.
+      </p>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <div class="service-number">01</div>
+
           <h3>APK-keuring</h3>
+
           <p>
             Is uw auto toe aan een APK-keuring?
             Wij controleren uw auto op de geldende
@@ -78,17 +106,25 @@
           </p>
         </article>
 
-        <article class="feature">
+
+        <article class="service-card">
+          <div class="service-number">02</div>
+
           <h3>Onderhoud</h3>
+
           <p>
-            Goed onderhoud helpt uw auto in goede conditie
-            te houden. Voor periodiek onderhoud kunt u
-            bij Garagebedrijf Oude Booyink terecht.
+            Goed onderhoud helpt uw auto in goede
+            conditie te houden. Voor periodiek
+            onderhoud kunt u bij ons terecht.
           </p>
         </article>
 
-        <article class="feature">
+
+        <article class="service-card">
+          <div class="service-number">03</div>
+
           <h3>Reparatie</h3>
+
           <p>
             Heeft uw auto een reparatie nodig?
             Wij helpen u graag om uw auto weer
@@ -98,9 +134,19 @@
 
       </div>
 
+
+      <!-- CONTACTKNOPPEN -->
+
       <div class="actions">
-        <a href="contact.html" class="btn primary">Neem contact op</a>
-        <a href="aanbod.html" class="btn">Bekijk ons aanbod</a>
+
+        <a href="contact.html" class="btn primary">
+          Neem contact op
+        </a>
+
+        <a href="aanbod.html" class="btn">
+          Bekijk ons aanbod
+        </a>
+
       </div>
 
     </div>
@@ -108,9 +154,15 @@
 
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; <span id="year"></span> Garagebedrijf Oude Booyink</p>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="wrap footer-row">
+    <p>
+      &copy; <span id="year"></span>
+      Garagebedrijf Oude Booyink
+    </p>
   </div>
 </footer>
 
@@ -118,3 +170,5 @@
 
 </body>
 </html>
+
+
