@@ -725,3 +725,109 @@ footer {
 .home-hero-content > p {
     color: #0089E8 !important;
 } 
+
+/* =====================================
+   HOMEPAGE FOTO-GALERIJ
+===================================== */
+
+.home-hero {
+  isolation: isolate;
+  background-image: none;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.86),
+      rgba(0,0,0,.28)
+    ),
+    var(--hero-image, url('vrachtwagentje.jpg'));
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  opacity: 1;
+  transition: opacity .25s ease;
+}
+
+.home-hero.photo-changing::before {
+  opacity: .25;
+}
+
+/* Kleine foto's rechtsonder */
+.hero-gallery {
+  position: absolute;
+  right: 35px;
+  bottom: 30px;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-thumb {
+  width: 112px;
+  height: 78px;
+  padding: 0;
+
+  border: 2px solid rgba(255,255,255,.65);
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: #101010;
+  cursor: pointer;
+
+  transition: border-color .25s ease,
+              transform .25s ease,
+              box-shadow .25s ease;
+}
+
+.hero-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-thumb:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue-light);
+}
+
+.hero-thumb.active {
+  border: 3px solid var(--blue-light);
+  box-shadow: 0 0 14px rgba(0,137,232,.65);
+}
+
+.hero-thumb:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+/* Mobiele weergave */
+@media (max-width: 700px) {
+  .hero-gallery {
+    right: 0;
+    left: 0;
+    bottom: 18px;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .hero-thumb {
+    width: 88px;
+    height: 62px;
+  }
+
+  .home-hero {
+    padding-bottom: 125px;
+  }
+}
