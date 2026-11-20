@@ -810,3 +810,15 @@ footer {
   min-width: 145px;
   height: 100px;
 }
+/* Grotere foto's rechtsonder */
+.hero-gallery {
+  width: 230px;
+  height: 100px;
+}
+
+.hero-gallery-track .hero-thumb {
+  flex: 0 0 145px;
+  width: 145px;
+  min-width: 145px;
+  height: 100px;
+}
